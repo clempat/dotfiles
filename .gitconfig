@@ -1,0 +1,7 @@
+[user]
+	email = clement.patout@gmail.com
+	name = Clément
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
