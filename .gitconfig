@@ -1,3 +1,5 @@
 [user]
 	email = clement.patout@gmail.com
 	name = Clement Patout
+[pull]
+	rebase = true
