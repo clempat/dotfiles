@@ -21,6 +21,7 @@ set noshowmode
 set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set colorcolumn=120
+set autoread
 
 call plug#begin('~/.vim/plugged')
 
@@ -85,4 +86,9 @@ vnoremap K :m '<-2<CR>gv=gv
 augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
+augroup filetype_jsx
+    autocmd!
+    autocmd FileType javascript set filetype=javascriptreact
 augroup END
