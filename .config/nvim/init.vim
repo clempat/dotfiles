@@ -53,10 +53,16 @@ Plug 'chriskempson/base16-vim'
 Plug 'sbdchd/neoformat'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'ThePrimeagen/git-worktree.nvim'
+Plug 'ThePrimeagen/harpoon'
 
 " GIT
 Plug 'junegunn/gv.vim'
 
+
+Plug 'hoob3rt/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " LSP
@@ -74,13 +80,6 @@ let mapleader = " "
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 
 " Prettier on save
 augroup fmt

@@ -1,4 +1,3 @@
-
 local Worktree = require("git-worktree")
 local path = require("plenary.path").path
 
