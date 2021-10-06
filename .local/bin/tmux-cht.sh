@@ -11,3 +11,4 @@ else
     echo "curl cht.sh/$selected~$query & while [ : ]; do sleep 1; done"
     tmux neww bash -c "curl cht.sh/$selected~$query & while [ : ]; do sleep 1; done"
 fi
+

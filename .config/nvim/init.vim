@@ -3,6 +3,7 @@ set path+=**
 set exrc
 set number relativenumber
 set nohlsearch
+set incsearch
 set hidden
 set noerrorbells
 set smartcase
@@ -18,7 +19,7 @@ set incsearch
 set termguicolors
 set scrolloff=8
 set noshowmode
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,noselect
 set signcolumn=yes
 set colorcolumn=120
 set autoread
@@ -54,6 +55,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'sbdchd/neoformat'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'ThePrimeagen/git-worktree.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'ThePrimeagen/harpoon'
 
 " GIT
@@ -64,6 +66,10 @@ Plug 'hoob3rt/lualine.nvim'
 " If you want to have icons in your statusline choose one of these
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
 
 " LSP
@@ -72,15 +78,24 @@ require'lspconfig'.tsserver.setup{}
 require'lspconfig'.yamlls.setup{}
 require'lspconfig'.graphql.setup{}
 require'lspconfig'.dockerls.setup{}
+require'lspconfig'.stylelint_lsp.setup{}
+require'lspconfig'.cssls.setup{}
+require'lspconfig'.html.setup{}
+require'lspconfig'.ember.setup{}
+require'lspconfig'.tailwindcss.setup{}
 EOF
 
 colorscheme gruvbox
 highlight Normal guibg=none
 
 let mapleader = " "
+inoremap jk <esc>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+nmap <leader>gs :G<CR>
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
 
 " Prettier on save
 augroup fmt
