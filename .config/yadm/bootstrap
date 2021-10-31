@@ -1,9 +1,0 @@
-#!/bin/sh
-
-echo "Install LSP dependencies"
-npm i -g @lifeart/ember-language-server @tailwindcss/language-server vscode-langservers-extracted typescript typescript-language-server yaml-language-server graphql-language-service-cli dockerfile-language-server-nodejs stylelint-lsp vscode-langservers-extracted
-
-if command -v vim >/dev/null 2>&1; then
-  echo "Bootstraping Vim"
-  vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
-fi
