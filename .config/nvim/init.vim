@@ -42,7 +42,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'hrsh7th/nvim-compe'
 
 Plug 'gruvbox-community/gruvbox'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-dispatch'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
