@@ -118,11 +118,14 @@ export NVM_DIR=~/.nvm
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/local/sbin:$HOME/.local/bin:$PATH"
 
 alias vim="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/workspace/GitHub/dotfiles/.p10k.zsh.
 [[ ! -f ~/workspace/GitHub/dotfiles/.p10k.zsh ]] || source ~/workspace/GitHub/dotfiles/.p10k.zsh
 
-bindkey -s '^f' 'tmux-sessionizer\n'
+
+if [ "$TMUX" = "" ]; then 
+  bindkey -s '^f' 'tmux-sessionizer\n'
+fi
