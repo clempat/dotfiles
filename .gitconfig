@@ -3,3 +3,7 @@
 	name = Clement Patout
 [pull]
 	rebase = true
+[core]
+	editor = nvim
+[push]
+	default = current
