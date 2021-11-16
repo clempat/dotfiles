@@ -138,3 +138,5 @@ alias vim="nvim"
 if [ "$TMUX" = "" ]; then 
   bindkey -s '^f' 'tmux-sessionizer\n'
 fi
+
+export PORTAL="$HOME/workspace/quandoo/portal"

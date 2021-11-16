@@ -73,6 +73,7 @@ call plug#end()
 
 " LSP
 lua << EOF
+require 'clempat'
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.yamlls.setup{}
 require'lspconfig'.graphql.setup{}
@@ -95,7 +96,9 @@ vnoremap K :m '<-2<CR>gv=gv
 nmap <leader>gs :G<CR>
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
-
+"Copy the path to the file
+nnoremap <leader>cp :let @+=expand("%")<CR> 
+nnoremap <leader>cl :let @+=expand("%") . ":" . line(".")<CR> 
 " Prettier on save
 augroup fmt
   autocmd!
