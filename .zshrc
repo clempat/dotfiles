@@ -122,6 +122,7 @@ source $ZSH/oh-my-zsh.sh
 #NVM
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+source /usr/share/nvm/init-nvm.sh
 
 # Java
 export PATH="$HOME/.jenv/bin:$PATH"
