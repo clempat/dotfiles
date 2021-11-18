@@ -141,3 +141,4 @@ if [ "$TMUX" = "" ]; then
 fi
 
 export PORTAL="$HOME/workspace/quandoo/portal"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
