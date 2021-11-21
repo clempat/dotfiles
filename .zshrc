@@ -122,7 +122,11 @@ fi
 #NVM
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+
+if [[ -r "/usr/share/nvm/init-nvm.sh" ]]; then
 source /usr/share/nvm/init-nvm.sh
+fi
 
 # Java
 export PATH="$HOME/.jenv/bin:$PATH"
