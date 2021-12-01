@@ -1,16 +1,21 @@
 configuration {
+  display-run: " ";
+  display-drun: "  ";
+  display-window: "  ";
+  drun-display-format: "{icon} {name}";
+  font: "JetBrainsMono Nerd Font Medium 10";
+  modi: "window,run,drun";
+  show-icons: true;
   modi: "run,drun";
 	width: 50;
 	lines: 15;
 	columns: 1;
-	font: "Liga SFMono Nerd Font 12";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-	show-icons: true;
 	terminal: "kitty";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -55,7 +60,6 @@ configuration {
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-	theme: "base16-material-palenight";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
@@ -150,3 +154,5 @@ configuration {
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
 @import "~/.local/share/rofi/themes/base16-material-palenight.rasi"
+@import "~/.local/share/rofi/themes/dracula.rasi"
+@theme "dracula"
