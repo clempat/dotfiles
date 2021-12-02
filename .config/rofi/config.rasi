@@ -6,10 +6,6 @@ configuration {
   font: "JetBrainsMono Nerd Font Medium 10";
   modi: "window,run,drun";
   show-icons: true;
-  modi: "run,drun";
-	width: 50;
-	lines: 15;
-	columns: 1;
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
@@ -37,7 +33,7 @@ configuration {
 	case-sensitive: false;
 /*	cycle: true;*/
 /*	sidebar-mode: false;*/
-	eh: 2;
+/*	eh: 2;*/
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
 /*	parse-known-hosts: true;*/
