@@ -101,7 +101,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -206,7 +206,9 @@ bindsym $mod+r mode "resize"
 exec nitrogen --restore
 
 # Picom
-exec picom -f
+# exec picom -f
+exec --no-startup-id xrandr --output HDMI-1 --auto --above DP-0
+exec --no-startup-id xrandr --output DP-0 --primary
 
 # Dracula colors
 # class                 border  bground text    indicator child_border
@@ -241,7 +243,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
-# Media player controls
+## Screenshots
+bindsym Print exec flameshot gui
+bindsym Shift+Print exec flameshot full Media player controls
+
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
@@ -249,5 +254,17 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 bindsym $mod+d exec "rofi -modi run,drun -show drun"
+bindsym $mod+e exec "rofi -modi run,drun -show run"
+#bindsym $mod+e exec "rofimoji"
 
 bindsym $mod+shift+x exec i3lock
+
+exec --no-startup-id /usr/bin/sizzy
+exec --no-startup-id /usr/bin/kitty
+exec --no-startup-id /usr/bin/logseq
+exec --no-startup-id /usr/bin/todoist
+exec --no-startup-id /usr/bin/brave --profile-directory="Default"
+exec --no-startup-id /usr/bin/brave --profile-directory="Profile 1"
+# Does not work as I want:
+# exec --no-startup-id i3-msg '$ws2;exec /usr/bin/brave --profile-directory="Profile 1"'
+# workspace $ws2;exec /usr/bin/brave --profile-directory='Default'
