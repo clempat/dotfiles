@@ -68,6 +68,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'wakatime/vim-wakatime'
+Plug 'tpope/vim-rhubarb'
 
 call plug#end()
 

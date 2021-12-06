@@ -115,18 +115,29 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Monitors
+set $monitor_top HDMI-1
+set $monitor_bottom DP-0
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Development "
-set $ws2 "2: Pro Browsing"
-set $ws3 "3: Personal Browsing"
-set $ws4 "4: Communications"
-set $ws5 "5: Productivity"
-set $ws6 "6"
+set $ws2 "2: Sizzy"
+set $ws3 "3: Perso Browsing"
+set $ws4 "4: Pro Browsing"
+set $ws5 "5: Communications"
+set $ws6 "6: Productivity"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10: Music"
+
+workspace $ws1 output $monitor_top
+workspace $ws2 output $monitor_bottom
+workspace $ws3 output $monitor_top
+workspace $ws4 output $monitor_top
+workspace $ws5 output $monitor_bottom
+workspace $ws6 output $monitor_bottom
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -152,15 +163,16 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+assign [class="Brave-browser" title="Google Meet"] $ws5
 assign [class="Brave-browser"] $ws3
 assign [class="Xfce4-terminal"] $ws1
-assign [class="Logseq"] $ws5
-assign [class="Todoist"] $ws5
-assign [class="Slack"] $ws4
-assign [class="discord"] $ws4
-assign [class="Microsoft Teams - Insiders"] $ws4
+assign [class="Logseq"] $ws6
+assign [class="Todoist"] $ws6
+assign [class="Slack"] $ws5
+assign [class="discord"] $ws5
+assign [class="Microsoft Teams - Insiders"] $ws5
 assign [class="kitty"] $ws1
-assign [class="Sizzy"] $ws1
+assign [class="Sizzy"] $ws2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -207,8 +219,8 @@ exec nitrogen --restore
 
 # Picom
 # exec picom -f
-exec --no-startup-id xrandr --output HDMI-1 --auto --above DP-0
-exec --no-startup-id xrandr --output DP-0 --primary
+exec --no-startup-id xrandr --output $monitor_top --auto --above $monitor_bottom
+exec --no-startup-id xrandr --output $monitor_bottom --primary
 
 # Dracula colors
 # class                 border  bground text    indicator child_border
