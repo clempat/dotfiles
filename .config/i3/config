@@ -164,7 +164,8 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="Brave-browser" title="Google Meet"] $ws5
-assign [class="Brave-browser"] $ws3
+assign [class="firefox"] $ws3
+assign [class="Brave-browser"] $ws4
 assign [class="Xfce4-terminal"] $ws1
 assign [class="Logseq"] $ws6
 assign [class="Todoist"] $ws6
@@ -281,7 +282,7 @@ exec --no-startup-id /usr/bin/sizzy
 exec --no-startup-id /usr/bin/kitty
 exec --no-startup-id /usr/bin/logseq
 exec --no-startup-id /usr/bin/todoist
-exec --no-startup-id /usr/bin/brave --profile-directory="Default"
+exec --no-startup-id /usr/bin/firefox
 exec --no-startup-id /usr/bin/brave --profile-directory="Profile 1"
 # Does not work as I want:
 # exec --no-startup-id i3-msg '$ws2;exec /usr/bin/brave --profile-directory="Profile 1"'
