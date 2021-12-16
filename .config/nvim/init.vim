@@ -87,7 +87,9 @@ require'lspconfig'.tailwindcss.setup{}
 EOF
 
 colorscheme gruvbox
-highlight Normal guibg=none
+" transparency background
+highlight Normal guibg=none ctermbg=none
+highlight ColorColumn ctermbg=238
 
 let mapleader = " "
 inoremap jk <esc>

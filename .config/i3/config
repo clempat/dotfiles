@@ -5,8 +5,9 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-
-
+smart_gaps on
+gaps outer 20
+gaps inner 10
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -227,6 +228,9 @@ exec nitrogen --restore
 # exec picom -f
 exec --no-startup-id xrandr --output $monitor_top --auto --above $monitor_bottom
 exec --no-startup-id xrandr --output $monitor_bottom --primary
+
+for_window [class=".*"] border pixel 0
+hide_edge_borders smart
 
 # Dracula colors
 # class                 border  bground text    indicator child_border
