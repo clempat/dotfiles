@@ -146,3 +146,5 @@ fi
 
 export PORTAL="$HOME/workspace/quandoo/portal"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin

@@ -26,10 +26,16 @@ set autoread
 
 call plug#begin('~/.vim/plugged')
 
+" LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'glepnir/lspsaga.nvim'
-Plug 'simrat39/symbols-outline.nvim'
+Plug 'simrat39/symbols-outline.nvim' " Not use yet this give a A tree like view for symbols in Neovim using the Language Server Protocol. Supports all your favourite languages.
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'onsails/lspkind-nvim'
 
 " Neovim Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -56,6 +62,7 @@ Plug 'ThePrimeagen/vim-be-good'
 Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'ThePrimeagen/harpoon'
+Plug 'darrikonn/vim-gofmt'
 
 " GIT
 Plug 'junegunn/gv.vim'
@@ -73,18 +80,7 @@ Plug 'tpope/vim-rhubarb'
 call plug#end()
 
 " LSP
-lua << EOF
-require 'clempat'
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.yamlls.setup{}
-require'lspconfig'.graphql.setup{}
-require'lspconfig'.dockerls.setup{}
-require'lspconfig'.stylelint_lsp.setup{}
-require'lspconfig'.cssls.setup{}
-require'lspconfig'.html.setup{}
-require'lspconfig'.ember.setup{}
-require'lspconfig'.tailwindcss.setup{}
-EOF
+lua require 'clempat'
 
 colorscheme gruvbox
 " transparency background
