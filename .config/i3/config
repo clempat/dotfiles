@@ -5,8 +5,8 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-smart_gaps on
-gaps outer 20
+# smart_gaps on
+gaps outer 1
 gaps inner 10
 # i3 config file (v4)
 #
@@ -243,7 +243,6 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-exec_always --no-startup-id /usr/bin/polybar
 # bar {
 # font pango:Noto Sans Regular 10
 # output primary
@@ -264,9 +263,6 @@ exec_always --no-startup-id /usr/bin/polybar
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 ## Screenshots
 bindsym Print exec flameshot gui
@@ -290,6 +286,7 @@ exec --no-startup-id /usr/bin/logseq
 exec --no-startup-id /usr/bin/todoist
 exec --no-startup-id /usr/bin/firefox
 exec --no-startup-id /usr/bin/brave --profile-directory="Profile 1"
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 # Does not work as I want:
 # exec --no-startup-id i3-msg '$ws2;exec /usr/bin/brave --profile-directory="Profile 1"'
 # workspace $ws2;exec /usr/bin/brave --profile-directory='Default'
