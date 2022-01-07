@@ -61,6 +61,7 @@ local servers = {
   "tailwindcss",
   "golangci_lint_ls",
   "gopls",
+  "jdtls",
 }
 
 for _, name in pairs(servers) do

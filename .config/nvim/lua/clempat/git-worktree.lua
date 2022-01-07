@@ -8,7 +8,7 @@ end
 local M = {}
 function M.execute(path, just_build)
   if is_portal(path) then
-    vim.cmd(string.format("!cp .env.exampe .env"))
+    --vim.cmd(string.format("!cp .env.exampe .env"))
     vim.cmd(string.format(":silent !yarn install"))
   end
 end
