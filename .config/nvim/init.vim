@@ -44,9 +44,6 @@ Plug 'nvim-treesitter/playground'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" Auto complete
-Plug 'hrsh7th/nvim-compe'
-
 Plug 'gruvbox-community/gruvbox'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-dispatch'
