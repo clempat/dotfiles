@@ -169,6 +169,7 @@ assign [class="firefox"] $ws3
 assign [class="Brave-browser"] $ws4
 assign [class="Xfce4-terminal"] $ws1
 assign [class="Logseq"] $ws6
+assign [class="obsidian"] $ws6
 assign [class="Todoist"] $ws6
 assign [class="Slack"] $ws5
 assign [class="discord"] $ws5
@@ -283,6 +284,7 @@ bindsym $mod+shift+x exec i3lock
 exec --no-startup-id /usr/bin/sizzy
 exec --no-startup-id /usr/bin/kitty
 exec --no-startup-id /usr/bin/logseq
+exec --no-startup-id /usr/bin/obsidian
 exec --no-startup-id /usr/bin/todoist
 exec --no-startup-id /usr/bin/firefox
 exec --no-startup-id /usr/bin/brave --profile-directory="Profile 1"

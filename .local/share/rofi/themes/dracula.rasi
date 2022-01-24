@@ -47,8 +47,8 @@ inputbar {
 }
 
 listview {
-  columns: 1;
-  lines: 8;
+  columns: 2;
+  lines: 4;
 }
 
 mainbox {
