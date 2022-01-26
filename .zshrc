@@ -128,6 +128,8 @@ if [[ -r "/usr/share/nvm/init-nvm.sh" ]]; then
 source /usr/share/nvm/init-nvm.sh
 fi
 
+export NODE_PATH=$NODE_PATH:`npm root -g`
+
 # Java
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
