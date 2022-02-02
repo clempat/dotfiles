@@ -187,7 +187,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Kitty] focus
 for_window [class=(?i)firefox] focus
-for_window [class=Brave-browser] focus
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -227,7 +226,7 @@ exec nitrogen --restore
 
 # Picom
 # exec picom -f
-exec --no-startup-id xrandr --output $monitor_top --auto --above $monitor_bottom
+# exec --no-startup-id xrandr --output $monitor_top --auto --above $monitor_bottom
 exec --no-startup-id xrandr --output $monitor_bottom --primary
 
 for_window [class=".*"] border pixel 0
@@ -283,7 +282,6 @@ bindsym $mod+shift+x exec i3lock
 
 exec --no-startup-id /usr/bin/sizzy
 exec --no-startup-id /usr/bin/kitty
-exec --no-startup-id /usr/bin/logseq
 exec --no-startup-id /usr/bin/obsidian
 exec --no-startup-id /usr/bin/todoist
 exec --no-startup-id /usr/bin/firefox
