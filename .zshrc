@@ -1,3 +1,5 @@
+# Make sure to have homebrew bins if installed
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -119,10 +121,16 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#NVM
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+if [ -d "$HOME/Library/Python/3.8/bin/" ]; then
+   export PATH=$HOME/Library/Python/3.8/bin:$PATH
+fi
+
+# NVM
+if [ -f "$BREW_PATH/nvm.sh" ] ; then
+   export NVM_DIR=~/.nvm
+   source $(brew --prefix nvm)/nvm.sh
+fi
 
 if [[ -r "/usr/share/nvm/init-nvm.sh" ]]; then
 source /usr/share/nvm/init-nvm.sh
@@ -146,13 +154,10 @@ if [ "$TMUX" = "" ]; then
   bindkey -s '^f' 'tmux-sessionizer\n'
 fi
 
-export PORTAL="$HOME/workspace/quandoo/portal"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
 
-PATH="/home/clement/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/clement/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/clement/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/clement/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/clement/perl5"; export PERL_MM_OPT;
+if [ -f ~/go ]; then
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$GOPATH/bin
+fi
+
