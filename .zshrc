@@ -1,5 +1,6 @@
 # Make sure to have homebrew bins if installed
-export BREW_PATH="/opt/homebrew"
+which brew > /dev/null
+BREW_RESULT=$?
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -128,7 +129,7 @@ if [ -d "$HOME/Library/Python/3.8/bin/" ]; then
 fi
 
 # NVM
-if [ -f "$BREW_PATH/nvm.sh" ] ; then
+if [ $BREW_RESULT -eq 0 ] ; then
    export NVM_DIR=~/.nvm
    source $(brew --prefix nvm)/nvm.sh
 fi
