@@ -80,6 +80,9 @@ call plug#end()
 " LSP
 lua require 'clempat'
 
+" Allow neoformat to use local prettier
+let g:neoformat_try_node_exe = 1
+
 colorscheme gruvbox
 " transparency background
 highlight Normal guibg=none ctermbg=none

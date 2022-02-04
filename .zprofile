@@ -1,8 +1,6 @@
-which brew > /dev/null
-BREW_RESULT=$?
-if [ $BREW_RESULT -eq 0 ]; then
-  export PATH=$(brew --prefix)/bin:$PATH
-   export PATH=$(brew --prefix)/sbin:$PATH
+if [ -f /opt/homebrew/bin/brew ]; then
+  export PATH=/opt/homebrew/bin:$PATH
+  export PATH=/opt/homebrew/sbin:$PATH
 fi
 
 alias tmux="TERM=xterm-256color tmux"
