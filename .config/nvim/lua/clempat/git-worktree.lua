@@ -1,8 +1,9 @@
 local Worktree = require("git-worktree")
 
-local function is_portal(path)
-  local found = path:find(vim.env["PORTAL"])
-  return type(found) == "number" and found > 0
+local function has_yarn(path)
+  -- local found = path:find(vim.env["PORTAL"])
+  -- return type(found) == "number" and found > 0
+  return false
 end
 
 local M = {}

@@ -1,2 +1,6 @@
 require("clempat.git-worktree")
 require("clempat.cmp")
+require("clempat.package-info")
+require("clempat.lualine")
+require("clempat.nvim-tree")
+require("clempat.mapping")

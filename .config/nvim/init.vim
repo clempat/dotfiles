@@ -54,6 +54,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 
+" Neovim file navigation tree
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
+
 " Prettier
 Plug 'sbdchd/neoformat'
 Plug 'ThePrimeagen/vim-be-good'
@@ -74,6 +78,10 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-rhubarb'
+
+" Frontend packages
+Plug 'vuki656/package-info.nvim'
+Plug 'MunifTanjim/nui.nvim'
 
 call plug#end()
 
@@ -99,6 +107,7 @@ nmap <leader>gf :diffget //2<CR>
 "Copy the path to the file
 nnoremap <leader>cp :let @+=expand("%")<CR> 
 nnoremap <leader>cl :let @+=expand("%") . ":" . line(".")<CR> 
+
 " Prettier on save
 augroup fmt
   autocmd!
