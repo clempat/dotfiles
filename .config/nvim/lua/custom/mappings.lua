@@ -1,8 +1,17 @@
 -- MAPPINGS
-local map = require("core.utils").map
+local M = {}
 
-map("n", "<C-p>", ":Telescope find_files <CR>")
-map("i", "jk", "<esc>")
-map("n", "<leader>a", ':lua require("harpoon.mark").add_file() <CR>')
-map("n", "<C-e>", ":Telescope harpoon marks <CR>")
-map("n", "<leader>xx", "TroubleToggl<CR>")
+M.all = {
+  n = {
+    ["<C-p>"] = {":Telescope find_files <CR>", "Find Files with Telescope"},
+    ["<leader>a"] = {":lua require('harpoon.mark').add_file() <CR>", "Add mark to harpoon"},
+    ["<C-e>"] = {":Telescope harpoon marks <CR>", "List marks from harpoon"},
+    ["<leader>xx"] = {"TroubleToggl<CR>", "I forgot"},
+    ["<c-u>"] = {"i<c-r>=trim(system('uuidgen'))<cr><esc>", "Generate uuid when normal mode"},
+  },
+  i = {
+    ["<c-u>"] = {"<c-r>=trim(system('uuidgen'))<cr>", "Generate uuid when insert mode"},
+  }
+}
+
+return M
