@@ -53,7 +53,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -117,8 +117,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Monitors
-set $monitor_top HDMI-1
-set $monitor_bottom DP-0
+# set $monitor_ultrawide HDMI-1
+# set $monitor_bottom DP-0
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -133,12 +133,12 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10: Music"
 
-workspace $ws1 output $monitor_top
-workspace $ws2 output $monitor_bottom
-workspace $ws3 output $monitor_bottom
-workspace $ws4 output $monitor_top
-workspace $ws5 output $monitor_bottom
-workspace $ws6 output $monitor_bottom
+# workspace $ws1 output $monitor_top
+# workspace $ws2 output $monitor_ultrawide
+# workspace $ws3 output $monitor_ultrawide
+# workspace $ws4 output $monitor_top
+# workspace $ws5 output $monitor_ultrawide
+# workspace $ws6 output $monitor_ultrawide
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -174,7 +174,7 @@ assign [class="Todoist"] $ws6
 assign [class="Slack"] $ws5
 assign [class="discord"] $ws5
 assign [class="Microsoft Teams - Insiders"] $ws5
-assign [class="kitty"] $ws1
+assign [class="Alacritty"] $ws1
 assign [class="Sizzy"] $ws2
 
 # reload the configuration file
@@ -185,7 +185,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # automatic set focus new window if it opens on another workspace then the current:
-for_window [class=Kitty] focus
+for_window [class=Alacritty] focus
 for_window [class=(?i)firefox] focus
 
 # resize window (you can also use the mouse for that)
@@ -227,7 +227,7 @@ exec nitrogen --restore
 # Picom
 # exec picom -f
 # exec --no-startup-id xrandr --output $monitor_top --auto --above $monitor_bottom
-exec --no-startup-id xrandr --output $monitor_bottom --primary
+# exec --no-startup-id xrandr --output $monitor_ultrawide --primary
 
 for_window [class=".*"] border pixel 0
 hide_edge_borders smart

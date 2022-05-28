@@ -1,6 +1,15 @@
+# load zprof
+zmodload zsh/zprof
+
 # Make sure to have homebrew bins if installed
 which brew > /dev/null
 BREW_RESULT=$?
+
+# Profiling script
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -129,14 +138,14 @@ if [ -d "$HOME/Library/Python/3.8/bin/" ]; then
 fi
 
 # NVM
-if [ $BREW_RESULT -eq 0 ] ; then
-   export NVM_DIR=~/.nvm
-   source $(brew --prefix nvm)/nvm.sh
-fi
-
-if [[ -r "/usr/share/nvm/init-nvm.sh" ]]; then
-source /usr/share/nvm/init-nvm.sh
-fi
+ if [ $BREW_RESULT -eq 0 ] ; then
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
+ fi
+ 
+ if [[ -r "/usr/share/nvm/init-nvm.sh" ]]; then
+ source /usr/share/nvm/init-nvm.sh
+ fi
 
 export NODE_PATH=$NODE_PATH:`npm root -g`
 
