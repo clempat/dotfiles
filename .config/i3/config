@@ -276,7 +276,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 bindsym $mod+d exec "rofi -modi run,drun -show drun"
 bindsym $mod+e exec "rofi -modi run,drun -show run"
-bindsym $mod+i exec "emoji-picker"
+# bindsym $mod+i exec "emoji-picker"
 
 bindsym $mod+shift+x exec i3lock
 
