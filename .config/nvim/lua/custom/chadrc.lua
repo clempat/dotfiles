@@ -25,6 +25,7 @@ M.plugins = {
 
 M.ui = {
 	theme = "chadracula",
+	theme_toggle = { "chadracula", "one_light" },
 }
 
 M.options = {

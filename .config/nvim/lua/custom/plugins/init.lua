@@ -50,6 +50,7 @@ return {
 
 		run = "./install.sh",
 		requires = "hrsh7th/nvim-cmp",
+		after = "hrsh7th/nvim-cmp",
 	},
 	["tpope/vim-fugitive"] = {
 
@@ -64,4 +65,19 @@ return {
 		end,
 	},
 	["andweeb/presence.nvim"] = {},
+	["mfussenegger/nvim-dap"] = {},
+	["rcarriga/nvim-dap-ui"] = {
+		requires = "mfussenegger/nvim-dap",
+	},
+	["theHamsta/nvim-dap-virtual-text"] = {
+		requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" },
+	},
+	["nvim-telescope/telescope-dap.nvim"] = {
+		requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter", "nvim-telescope/telescope.nvim" },
+	},
+	["ThePrimeagen/git-worktree.nvim"] = {
+		config = function()
+			require("git-worktree").setup()
+		end,
+	},
 }
