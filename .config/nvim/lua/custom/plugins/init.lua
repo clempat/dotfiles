@@ -1,4 +1,7 @@
 return {
+	["nvim-telescope/telescope.nvim"] = {
+		module = "telescope",
+	},
 	["windwp/nvim-ts-autotag"] = {
 		ft = { "html", "javascriptreact" },
 		after = "nvim-treesitter",
@@ -14,16 +17,9 @@ return {
 		end,
 	},
 	["nvim-telescope/telescope-media-files.nvim"] = {
-		after = "telescope.nvim",
+		after = { "telescope.nvim" },
+
 		config = function()
-			require("telescope").setup({
-				extensions = {
-					media_files = {
-						filetypes = { "png", "webp", "jpg", "jpeg" },
-					},
-					-- fd is needed
-				},
-			})
 			require("telescope").load_extension("media_files")
 		end,
 	},
@@ -39,21 +35,18 @@ return {
 		end,
 	},
 	["williamboman/nvim-lsp-installer"] = {},
-	["ThePrimeagen/harpoon"] = {
-
-		after = { "plenary.nvim", "telescope.nvim" },
-		config = function()
-			require("telescope").load_extension("harpoon")
-		end,
-	},
+	-- ["ThePrimeagen/harpoon"] = {
+	-- 	after = { "plenary.nvim", "telescope.nvim" },
+	-- 	config = function()
+	-- 		require("telescope").load_extension("harpoon")
+	-- 	end,
+	-- },
 	["tzachar/cmp-tabnine"] = {
-
+		after = "nvim-cmp",
 		run = "./install.sh",
 		requires = "hrsh7th/nvim-cmp",
-		after = "hrsh7th/nvim-cmp",
 	},
 	["tpope/vim-fugitive"] = {
-
 		"vuki656/package-info.nvim",
 		requires = "MunifTanjim/nui.nvim",
 	},
@@ -74,10 +67,16 @@ return {
 	},
 	["nvim-telescope/telescope-dap.nvim"] = {
 		requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter", "nvim-telescope/telescope.nvim" },
+		before = { "telescope.nvim" },
 	},
 	["ThePrimeagen/git-worktree.nvim"] = {
+		requires = { "nvim-telescope/telescope.nvim" },
+
+		after = { "telescope.nvim" },
+
 		config = function()
 			require("git-worktree").setup()
+			require("telescope").load_extension("git_worktree")
 		end,
 	},
 }

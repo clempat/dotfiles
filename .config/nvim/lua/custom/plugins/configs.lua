@@ -40,4 +40,13 @@ M.cmp = {
 	},
 }
 
+M.telescope = {
+	extensions = {
+		media_files = {
+			filetypes = { "png", "webp", "jpg", "jpeg", "svg" },
+		},
+		-- fd is needed
+	},
+}
+
 return M

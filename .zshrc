@@ -197,3 +197,5 @@ ku() {
 if [ -f ~/.config/sops/age/keys.txt ]; then
   export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
 fi
+
+export GPG_TTY=$(tty)

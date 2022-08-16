@@ -18,6 +18,7 @@ M.plugins = {
 		["nvim-treesitter/nvim-treesitter"] = plugin_conf.treesitter,
 		["kyazdani42/nvim-tree.lua"] = plugin_conf.nvimtree,
 		["hrsh7th/nvim-cmp"] = plugin_conf.cmp,
+		["telescope/telescope.nvim"] = plugin_conf.telescope,
 	},
 
 	user = userPlugins,

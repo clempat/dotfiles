@@ -7,3 +7,7 @@
 	editor = nvim
 [push]
 	default = current
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
