@@ -22,6 +22,7 @@ M.all = {
 			end,
 			"Toggle float terminal",
 		},
+		["<C-f>"] = { ":Telescope projects <CR>", "Projects switch" },
 	},
 	i = {
 		["<c-u>"] = { "<c-r>=trim(system('uuidgen'))<cr>", "Generate uuid when insert mode" },
@@ -32,6 +33,8 @@ M.all = {
 			end,
 			"Toggle float terminal",
 		},
+
+		["<C-f>"] = { ":Telescope projects <CR>", "Projects switch" },
 	},
 	t = {
 		["<c-t>"] = {
@@ -40,6 +43,7 @@ M.all = {
 			end,
 			"Toggle float terminal",
 		},
+		["<C-f>"] = { ":Telescope projects <CR>", "Projects switch" },
 	},
 }
 

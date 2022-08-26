@@ -35,12 +35,12 @@ return {
 		end,
 	},
 	["williamboman/nvim-lsp-installer"] = {},
-	-- ["ThePrimeagen/harpoon"] = {
-	-- 	after = { "plenary.nvim", "telescope.nvim" },
-	-- 	config = function()
-	-- 		require("telescope").load_extension("harpoon")
-	-- 	end,
-	-- },
+	["ThePrimeagen/harpoon"] = {
+		after = { "plenary.nvim", "telescope.nvim" },
+		config = function()
+			require("telescope").load_extension("harpoon")
+		end,
+	},
 	["tzachar/cmp-tabnine"] = {
 		after = "nvim-cmp",
 		run = "./install.sh",
@@ -77,6 +77,13 @@ return {
 		config = function()
 			require("git-worktree").setup()
 			require("telescope").load_extension("git_worktree")
+		end,
+	},
+	["ahmedkhalf/project.nvim"] = {
+		after = { "telescope.nvim" },
+		config = function()
+			require("project_nvim").setup()
+			require("telescope").load_extension("projects")
 		end,
 	},
 }
