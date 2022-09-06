@@ -8,12 +8,6 @@ M.plugins = {
 		colorizer = true,
 	},
 
-	options = {
-		lspconfig = {
-			setup_lspconf = "custom.plugins.lspconfig",
-		},
-	},
-
 	override = {
 		["nvim-treesitter/nvim-treesitter"] = plugin_conf.treesitter,
 		["kyazdani42/nvim-tree.lua"] = plugin_conf.nvimtree,
