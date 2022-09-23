@@ -23,17 +23,6 @@ M.ui = {
 	theme_toggle = { "chadracula", "one_light" },
 }
 
-M.options = {
-	user = function()
-		vim.opt.relativenumber = true
-		vim.opt.tabstop = 2
-		-- vim.opt.nohlsearch = true
-		-- vim.opt.scrollof = 8
-		-- vim.opt.noshowmode = true
-		vim.opt.clipboard = ""
-	end,
-}
-
 M.mappings = require("custom.mappings")
 
 return M

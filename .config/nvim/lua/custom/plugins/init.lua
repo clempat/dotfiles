@@ -92,4 +92,11 @@ return {
 			require("telescope").load_extension("projects")
 		end,
 	},
+	["nvim-treesitter/nvim-treesitter-context"] = {
+		requires = "nvim-treesitter/nvim-treesitter",
+
+		config = function()
+			require("custom.plugins.treesitter-context").setup()
+		end,
+	},
 }
