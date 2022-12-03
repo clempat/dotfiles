@@ -1,4 +1,4 @@
-local lsp_installer = require("nvim-lsp-installer")
+-- local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
@@ -9,6 +9,7 @@ local servers = {
 	"tsserver",
 	"yamlls",
 	"graphql",
+	"omnisharp",
 	"dockerls",
 	"stylelint_lsp",
 	"cssls",
@@ -21,18 +22,6 @@ local servers = {
 	"terraformls",
 	"eslint",
 }
-
-lsp_installer.settings({
-	ensure_installed = servers,
-	automatic_installation = true,
-	ui = {
-		icons = {
-			server_installed = "﫟",
-			server_pending = "",
-			server_uninstalled = "✗",
-		},
-	},
-})
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({

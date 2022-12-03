@@ -3,18 +3,19 @@ local M = {}
 -- overriding default plugin configs!
 M.treesitter = {
 	ensure_installed = {
-		"typescript",
-		"lua",
-		"vim",
-		"html",
+		"bash",
+		"c",
+		"c_sharp",
 		"css",
+		"dockerfile",
+		"html",
 		"javascript",
 		"json",
-		"toml",
+		"lua",
 		"markdown",
-		"c",
-		"bash",
-		"dockerfile",
+		"toml",
+		"typescript",
+		"vim",
 		"yaml",
 	},
 }
@@ -31,10 +32,10 @@ M.nvimtree = {
 
 M.cmp = {
 	sources = {
-		{ name = "nvim_lsp" },
+		{ name = "buffer" },
 		{ name = "cmp_tabnine" },
 		{ name = "luasnip" },
-		{ name = "buffer" },
+		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "path" },
 	},

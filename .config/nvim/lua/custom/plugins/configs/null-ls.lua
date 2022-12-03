@@ -15,6 +15,7 @@ local sources = {
 			"javascriptreact",
 			"typescript.tsx",
 			"javascript.jsx",
+			"json",
 		},
 	}),
 	-- b.formatting.deno_fmt,
