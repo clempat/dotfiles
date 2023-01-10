@@ -29,3 +29,4 @@ fi
 if [ -d "$HOME/Applications" ]; then
 	PATH="$HOME/Applications:$PATH"
 fi
+. "$HOME/.cargo/env"

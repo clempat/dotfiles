@@ -116,3 +116,4 @@ if ! shopt -oq posix; then
   fi
 fi
 source /usr/share/nvm/init-nvm.sh
+. "$HOME/.cargo/env"
