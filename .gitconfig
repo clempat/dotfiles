@@ -5,6 +5,7 @@
 	rebase = true
 [core]
 	editor = nvim
+	excludesFile = ~/.gitignore
 [push]
 	default = current
 [gpg]
