@@ -54,15 +54,16 @@ yabai -m config mouse_action2                resize
 
 # window gaps
 yabai -m config layout                     bsp
-yabai -m config top_padding                32
+yabai -m config top_padding                8
 yabai -m config bottom_padding             8
 yabai -m config left_padding               8
 yabai -m config right_padding              8
 yabai -m config window_gap                 8
 
 #notify sketchybar when window focus is changed
-# yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
-# yabai -m signal --add event=window_title_changed action="sketchybar --trigger title_change"
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_title_changed action="sketchybar --trigger title_change"
+yabai -m config external_bar main:30:0
 
 # notify when the yabai config finished loading
 echo "yabai configuration loaded.."
