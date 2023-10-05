@@ -1,6 +1,7 @@
 [user]
-	email = clement.patout@gmail.com
-	name = Clément Patout
+   signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCuFgaDi29+nPVyBqCVczlpLTKHczXZwa7Uz/MSwr6Ds71AjGECEgIUqWEIco7G6A199aDNRyG8W4jZDFquTAsSxvckYhb+JcNlik34rAwVpl6w3CxW81JZQIEaixLTY9f/eB6ZD6f3+eTOqYuvkAo8s+J2TuAaWoC70pEAoksLx1sjNsKTWyKff4m3JR56mKq8zs3p92FzhtPq/veHsZx4k+1Ty5vqpRpegclPnz310mC1LVAz986UWQ65PxKDULSZjm1TgojetOmsjum12P1fzbqfK1ZmPKv00L94EjtP60UnEgnXI6ScCDmQtJnrpGAxNH2Knm/kQdleO7ajzQhv
+[include]
+  	path = ~/.perso.gitconfig
 [pull]
 	rebase = true
 [core]
@@ -8,7 +9,13 @@
 	excludesFile = ~/.gitignore
 [push]
 	default = current
-[gpg]
-	program = gpg
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
 [commit]
-	gpgsign = true
+  gpgsign = true
+
+[includeIf "gitdir/i:~/workspace/enpal/"]
+    path = .enpal.gitconfig
+[gpg]
+	format = ssh
